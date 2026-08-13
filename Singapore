@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Suchith.site | AWS Singapore</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:Inter,sans-serif;
+    color:#eff6ff;
+
+    background:
+        radial-gradient(circle at 10% 10%,rgba(37,99,235,.45),transparent 30%),
+        radial-gradient(circle at 90% 90%,rgba(30,64,175,.35),transparent 35%),
+        linear-gradient(135deg,#020617,#071a3a,#020617);
+
+    padding:40px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:70px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(15,40,90,.95),
+        rgba(2,15,40,.95)
+    );
+
+    border:1px solid rgba(59,130,246,.6);
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 10px 35px rgba(37,99,235,.15);
+}
+
+.logo{
+    font-size:23px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#60a5fa;
+}
+
+.system-status{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#86efac;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+.status-dot{
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:0 0 15px #22c55e;
+}
+
+/* HERO */
+
+.hero{
+    min-height:330px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,40,90,.98),
+            rgba(23,62,130,.95),
+            rgba(2,15,40,.98)
+        );
+
+    border:1px solid rgba(59,130,246,.7);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.55),
+        0 0 50px rgba(37,99,235,.12);
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    right:-150px;
+    top:-200px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.20);
+
+    box-shadow:
+        0 0 100px rgba(37,99,235,.25);
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    left:-120px;
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:rgba(30,64,175,.18);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.region-tag{
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    color:#bfdbfe;
+
+    background:rgba(37,99,235,.18);
+
+    border:1px solid rgba(96,165,250,.6);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.12);
+}
+
+h1{
+    font-size:52px;
+
+    line-height:1.05;
+
+    margin-bottom:15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #bfdbfe,
+            #60a5fa
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-description{
+    max-width:650px;
+
+    color:#bfdbfe;
+
+    line-height:1.7;
+
+    font-size:15px;
+}
+
+.flag{
+    position:relative;
+
+    z-index:2;
+
+    font-size:110px;
+
+    margin-right:25px;
+
+    filter:
+        drop-shadow(0 15px 30px rgba(0,0,0,.6))
+        drop-shadow(0 0 25px rgba(37,99,235,.25));
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:22px;
+}
+
+.card{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,40,90,.95),
+            rgba(2,15,40,.95)
+        );
+
+    border:1px solid rgba(59,130,246,.35);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.25s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+}
+
+.card:hover{
+    transform:translateY(-7px);
+
+    border-color:#60a5fa;
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,.20),
+        0 0 25px rgba(37,99,235,.08);
+}
+
+.card-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.30),
+            rgba(30,64,175,.12)
+        );
+
+    border:1px solid rgba(59,130,246,.3);
+
+    font-size:21px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.08);
+}
+
+.card-label{
+    color:#60a5fa;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+}
+
+.card-value{
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#eff6ff;
+}
+
+.card-sub{
+    margin-top:7px;
+
+    color:#93c5fd;
+
+    font-size:12px;
+}
+
+/* CONNECTION */
+
+.connection{
+    margin-top:22px;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,.15),
+            rgba(15,40,90,.95)
+        );
+
+    border:1px solid rgba(59,130,246,.45);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 35px rgba(37,99,235,.08);
+}
+
+.connection-info{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.connection-dot{
+    width:14px;
+    height:14px;
+
+    background:#22c55e;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 18px #22c55e;
+}
+
+.connection-title{
+    font-weight:700;
+
+    font-size:15px;
+
+    color:#eff6ff;
+}
+
+.connection-description{
+    color:#93c5fd;
+
+    font-size:12px;
+
+    margin-top:5px;
+}
+
+.online{
+    color:#4ade80;
+
+    font-size:13px;
+
+    font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    color:#60a5fa;
+
+    font-size:12px;
+
+    margin-top:25px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    body{
+        padding:20px;
+    }
+
+    .hero{
+        padding:35px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    .flag{
+        font-size:70px;
+        margin-right:0;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            🚀 <span>Suchith</span>.site
+        </div>
+
+        <div class="system-status">
+            <div class="status-dot"></div>
+            System Operational
+        </div>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="region-tag">
+                AWS REGION • AP-SOUTHEAST-1
+            </div>
+
+            <h1>
+                Singapore
+                <br>
+                Region
+            </h1>
+
+            <p class="hero-description">
+                Welcome to the AWS Asia Pacific (Singapore) region.
+                This website is currently being served from
+                infrastructure located in Singapore.
+            </p>
+
+        </div>
+
+        <div class="flag">
+            🇸🇬
+        </div>
+
+    </div>
+
+
+    <!-- INFORMATION CARDS -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">📍</div>
+
+            <div class="card-label">
+                AWS REGION
+            </div>
+
+            <div class="card-value">
+                ap-southeast-1
+            </div>
+
+            <div class="card-sub">
+                Asia Pacific • Singapore
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🖥️</div>
+
+            <div class="card-label">
+                COMPUTE
+            </div>
+
+            <div class="card-value">
+                Amazon EC2
+            </div>
+
+            <div class="card-sub">
+                Web Server Instance
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🌐</div>
+
+            <div class="card-label">
+                DNS ROUTING
+            </div>
+
+            <div class="card-value">
+                Amazon Route 53
+            </div>
+
+            <div class="card-sub">
+                Latency Based Routing
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">💚</div>
+
+            <div class="card-label">
+                HEALTH CHECK
+            </div>
+
+            <div class="card-value">
+                Healthy
+            </div>
+
+            <div class="card-sub">
+                Endpoint responding normally
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔒</div>
+
+            <div class="card-label">
+                CONNECTION
+            </div>
+
+            <div class="card-value">
+                HTTP / HTTPS
+            </div>
+
+            <div class="card-sub">
+                Web traffic enabled
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">⚡</div>
+
+            <div class="card-label">
+                AVAILABILITY
+            </div>
+
+            <div class="card-value">
+                Active
+            </div>
+
+            <div class="card-sub">
+                Accepting traffic
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONNECTION STATUS -->
+
+    <div class="connection">
+
+        <div class="connection-info">
+
+            <div class="connection-dot"></div>
+
+            <div>
+
+                <div class="connection-title">
+                    Connected to Singapore Infrastructure
+                </div>
+
+                <div class="connection-description">
+                    Route 53 directed this request to ap-southeast-1
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="online">
+            ● ONLINE
+        </div>
+
+    </div>
+
+
+    <footer>
+        © 2026 Suchith.site • AWS Multi-Region Architecture
+    </footer>
+
+</div>
+
+</body>
+</html>
