@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Suchith.site | AWS Mumbai</title>
+<title>asmi.website | AWS Mumbai</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -452,7 +452,7 @@ footer{
     <div class="navbar">
 
         <div class="logo">
-            🚀 <span>Suchith</span>.site
+            🚀 <span>Asmi</span>.site
         </div>
 
         <div class="system-status">
@@ -644,7 +644,7 @@ footer{
 
 
     <footer>
-        © 2026 Suchith.site • AWS Multi-Region Architecture
+        © 2026 asmi.website • AWS Multi-Region Architecture
     </footer>
 
 </div>
